@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twindesk: Elite Virtual Assistants. Zero Hiring Risk.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+                max-height: 500px;
+            }
+        }
+        .stat-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            text-align: center;
+            border-left: 8px solid #0059CF;
+        }
+        .flow-step {
+            background-color: #ffffff;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #0059CF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem 0;
+        }
+        .table-header {
+            background-color: #00449E;
+            color: white;
+        }
+        .table-cell {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .text-primary { color: #0059CF; }
+        .text-deep-blue { color: #00449E; }
+        .bg-primary { background-color: #0059CF; }
+        .bg-deep-blue { background-color: #00449E; }
+        .border-primary { border-color: #0059CF; }
+        .big-number {
+            font-size: 3rem; 
+            font-weight: 900; 
+            line-height: 1;
+        }
+        .testimonial-card {
+            background-color: #E8F0FF; /* Light blue background for contrast */
+            border-radius: 0.75rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-top: 4px solid #0059CF; /* Blue accent line */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-deep-blue text-white p-8 text-center shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-2">TWINDESK: ELITE VIRTUAL ASSISTANTS</h1>
+        <h2 class="text-2xl md:text-3xl font-semibold text-blue-200">Zero Hiring Risk. Guaranteed Performance.</h2>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <section id="problem-solution" class="mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold text-red-600 mb-4">The Problem We Solve</h3>
+                    <ul class="list-none space-y-4">
+                        <li class="flex items-start">
+                            <span class="text-red-600 font-bold text-2xl mr-3">&#10007;</span>
+                            <div>
+                                <h4 class="text-lg font-semibold">Hiring Chaos</h4>
+                                <p class="text-gray-600">The lengthy, frustrating process of searching, interviewing, and training administrative staff.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 font-bold text-2xl mr-3">&#10007;</span>
+                            <div>
+                                <h4 class="text-lg font-semibold">The Risk</h4>
+                                <p class="text-gray-600">Wasting time and money on VAs who lack system proficiency or operational autonomy.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-8 border-primary">
+                    <h3 class="text-2xl font-bold text-primary mb-4">The TwinDesk Solution</h3>
+                    <p class="text-lg text-gray-700 mb-4">We provide high-caliber, <strong>pre-vetted</strong> talent for Executive, Admin, and Customer Service roles with an industry-leading <strong>6-Month Performance Warranty</strong>.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Executive VA</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Administrative Assistant</span>
+                        <span class="bg-blue-100 text-blue-800 text-sm font-medium px-3 py-1 rounded-full">Customer Service VA</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="differentiators" class="mb-16">
+            <h2 class="text-3xl font-extrabold text-center text-deep-blue mb-8">Why TwinDesk? Our Unmatched Guarantee.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div class="md:col-span-2">
+                    <div class="stat-card p-8">
+                        <h3 class="text-2xl font-bold text-primary mb-2">1. The 6-Month Performance Guarantee</h3>
+                        <p class="text-lg text-gray-700 mb-4">Every successful hire is covered. If you are dissatisfied with the VA's performance within the first six months, <strong>we source and place a free replacement immediately.</strong></p>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-primary mb-3">2. Proven Specialization: Where Our Vetting Focuses</h3>
+                    <p class="text-gray-600 mb-6">Our model is built around high-demand roles. This visual breakdown shows the core weighted composition of our pre-vetting focus, ensuring deep, measured expertise in the most critical administrative verticals.</p>
+                    <div class="chart-container h-96 max-h-96">
+                        <canvas id="specialistDoughnutChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 text-center">We test across all critical administrative verticals, with a strong focus on high-stakes EMR/Billing and Executive Financials.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-primary mb-3">3. Vetted Core Competencies</h3>
+                    <p class="text-gray-600 mb-6">Our vetting criteria are based on measurable outcomes achieved in real-world high-volume, regulated, and executive environments.</p>
+                    <div class="chart-container">
+                        <canvas id="specialistRadarChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 text-center">This radar chart demonstrates the multi-disciplinary expertise our vetting process certifies, requiring high proficiency across all dimensions.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="founder-credibility" class="mb-16">
+            <h2 class="text-3xl font-extrabold text-center text-deep-blue mb-8">Credibility by the Numbers: The Twindesk Standard</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">The standard we hold our candidates to is non-negotiable. Our vetting process is designed by a founder who has personally achieved these metrics in regulated and executive roles, ensuring every VA you hire meets a threshold of proven excellence.</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="stat-card p-6 border-l-8 border-primary">
+                    <p class="big-number text-primary">100%</p>
+                    <h4 class="text-lg font-semibold mt-2">Data Accuracy</h4>
+                    <p class="text-sm text-gray-600">Vetted proficiency in EMR/Payment reconciliation and patient/prescription data entry.</p>
+                </div>
+                <div class="stat-card p-6 border-l-8 border-primary">
+                    <p class="big-number text-primary">95%+</p>
+                    <h4 class="text-lg font-semibold mt-2">Claims Approval Rate</h4>
+                    <p class="text-sm text-gray-600">Proven ability to submit precise billing/diagnosis codes and efficiently manage rejections.</p>
+                </div>
+                <div class="stat-card p-6 border-l-8 border-primary">
+                    <p class="big-number text-primary">100+</p>
+                    <h4 class="text-lg font-semibold mt-2">Daily Ticket Volume</h4>
+                    <p class="text-sm text-gray-600">Testing for sustained high-volume, on-brand support resolution in CRMs (HubSpot, Freshdesk).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="client-testimonials" class="mb-16">
+            <h2 class="text-3xl font-extrabold text-center text-deep-blue mb-8">Client Success Stories</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">Don't just take our word for it—see how TwinDesk-vetted talent transforms our clients' operations, from organization to specialized financial tasks.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="testimonial-card">
+                    <p class="text-xl italic text-gray-800 mb-4">"Maria has become an integral member of our back office team. She helps us stay organized and on top of collections for all of our clients. She's organized and always willing to take on any task that comes up. It's incredibly valuable to have someone that we can turn to when small projects come up so that my time can be freed up to keep working on growing and managing the business."</p>
+                    <p class="text-lg font-bold text-primary">— Jesse L. - CEO</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <p class="text-xl italic text-gray-800 mb-4">"Maria - once again very impressed. Probably best admin support I have seen in terms of setting expectations & explaining over the years. Know how I'm being charged, when, & distinctions on client vs. provider roles. Awesome! Also like how <i>italics</i>, <b>bold</b>, & <u>font</u> are used to highlight quick points at a glance."</p>
+                    <p class="text-lg font-bold text-primary">— Ward A. - CEO</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <section id="vetting-process" class="mb-16">
+            <h2 class="text-3xl font-extrabold text-center text-deep-blue mb-8">Our Proof: The 3-Step Vetting Framework</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">We source elite candidates from our 30,000+ member network and put them through a rigorous process to accelerate placement from months to days.</p>
+            
+            <div class="flex flex-col md:flex-row items-stretch justify-center gap-6">
+                <div class="flow-step">
+                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-bold mb-2">Screening & Assessment</h3>
+                    <p class="text-gray-600">Comprehensive resume screening and a <strong>mandatory video introduction</strong> to assess communication and professionalism.</p>
+                </div>
+                
+                <div class="flow-arrow">
+                    <span class="hidden md:block">&rarr;</span>
+                    <span class="block md:hidden">&darr;</span>
+                </div>
+
+                <div class="flow-step">
+                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-bold mb-2">Live Interview & Task Audit</h3>
+                    <p class="text-gray-600">In-depth behavioral interviews and <strong>live, scenario-based proficiency testing</strong> in billing, scheduling, and CRMs.</p>
+                </div>
+                
+                <div class="flow-arrow">
+                    <span class="hidden md:block">&rarr;</span>
+                    <span class="block md:hidden">&darr;</span>
+                </div>
+
+                <div class="flow-step">
+                    <div class="bg-primary text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-bold mb-2">Final Presentation & Placement</h3>
+                    <p class="text-gray-600">A curated <strong>short-list</strong> of candidates who have passed all audits is presented for your final selection.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="mb-16">
+            <h2 class="text-3xl font-extrabold text-center text-deep-blue mb-8">Accelerated Hiring, Transparent Fees</h2>
+            <p class="text-lg text-center text-gray-700 max-w-3xl mx-auto mb-10">Our pricing is success-based and completely transparent, ensuring you only pay when you find your perfect match. No hidden fees, no recurring costs.</p>
+
+            <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
+                <table class="w-full min-w-max">
+                    <thead>
+                        <tr class="table-header">
+                            <th class="table-cell font-bold text-lg">Fee Structure</th>
+                            <th class="table-cell font-bold text-lg">Amount</th>
+                            <th class="table-cell font-bold text-lg">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="table-cell font-semibold text-gray-900">Search & Match Deposit</td>
+                            <td class="table-cell font-semibold text-gray-900">$500 (One-Time)</td>
+                            <td class="table-cell text-gray-700">Activates the dedicated search and shortlisting. <strong>Fully deducted from the final placement fee.</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="table-cell font-semibold text-gray-900">Success-Based Placement Fee</td>
+                            <td class="table-cell font-semibold text-gray-900">15% (of Year 1 Salary)</td>
+                            <td class="table-cell text-gray-700">Charged only once the offer is signed by your future VA.</td>
+                        </tr>
+                        <tr>
+                            <td class="table-cell font-semibold text-gray-900">Performance Guarantee</td>
+                            <td class="table-cell font-semibold text-gray-900">Included (6 Months)</td>
+                            <td class="table-cell text-gray-700">Free replacement sourcing if you are dissatisfied within the first six months.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="cta" class="bg-deep-blue text-white text-center p-10 rounded-lg shadow-xl">
+            <h2 class="text-4xl font-extrabold mb-4">Ready for a Guaranteed Hire?</h2>
+            <h3 class="text-2xl font-semibold text-blue-200 mb-6">Stop Rolling the Dice. Hire the Best.</h3>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-4 mb-8">
+                <div class="bg-blue-900 p-4 rounded-lg flex items-center justify-center md:justify-start gap-3">
+                    <span class="text-green-400 text-2xl font-bold">&#10004;</span>
+                    <span class="text-lg font-medium">System-Ready</span>
+                </div>
+                <div class="bg-blue-900 p-4 rounded-lg flex items-center justify-center md:justify-start gap-3">
+                    <span class="text-green-400 text-2xl font-bold">&#10004;</span>
+                    <span class="text-lg font-medium">Discreet</span>
+                </div>
+                <div class="bg-blue-900 p-4 rounded-lg flex items-center justify-center md:justify-start gap-3">
+                    <span class="text-green-400 text-2xl font-bold">&#10004;</span>
+                    <span class="text-lg font-medium">Productive on Day 1</span>
+                </div>
+            </div>
+            
+            <p class="text-lg text-blue-100 mb-8">Contact us to define your specific needs or schedule your call to start the qualification and match process.</p>
+            
+            <a href="https://calendly.com/sgmejia0826/coffee-chat-let-s-talk-about-your-business-goals?month=2025-10&date=2025-10-27" class="bg-white text-deep-blue font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-blue-100 transition duration-300">
+                Schedule Your Call
+            </a>
+        </section>
+    </main>
+
+    <footer class="text-center p-6 mt-10">
+        <p class="text-gray-500">&copy; 2025 TwinDesk. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapLabel = (label) => {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            // Radar Chart Data - Credibility
+            const specialistLabels = [
+                'Healthcare Ops (EMR/Billing)',
+                'Executive Finance (AR/AP)',
+                'CRM & High-Volume Support',
+                'SOP & Process Design',
+                'Digital Marketing & Design'
+            ].map(wrapLabel);
+
+            const specialistData = {
+                labels: specialistLabels,
+                datasets: [{
+                    label: 'Vetted Expertise Level',
+                    data: [5, 4, 5, 4, 3],
+                    backgroundColor: 'rgba(0, 89, 207, 0.2)',
+                    borderColor: '#0059CF',
+                    pointBackgroundColor: '#0059CF',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: '#0059CF',
+                    borderWidth: 2
+                }]
+            };
+
+            const specialistConfig = {
+                type: 'radar',
+                data: specialistData,
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            pointLabels: {
+                                font: {
+                                    size: 10,
+                                    weight: 'bold'
+                                },
+                                color: '#333333'
+                            },
+                            ticks: {
+                                backdropColor: 'transparent',
+                                color: '#777',
+                                stepSize: 1,
+                                max: 5,
+                                min: 0
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                            labels: {
+                                color: '#333333',
+                                font: {
+                                    size: 14,
+                                    weight: '600'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+
+            const specialistRadarChartCtx = document.getElementById('specialistRadarChart').getContext('2d');
+            new Chart(specialistRadarChartCtx, specialistConfig);
+            
+            // Doughnut Chart Data - Specialization Distribution
+            const distributionLabels = [
+                'Healthcare & Billing',
+                'Executive Ops & Finance',
+                'Customer Support',
+                'Digital Marketing & Design'
+            ].map(wrapLabel);
+
+            const distributionData = {
+                labels: distributionLabels,
+                datasets: [{
+                    label: 'Vetting Focus Distribution',
+                    data: [35, 30, 25, 10], // Distribution percentages
+                    backgroundColor: [
+                        '#0059CF', // Primary Blue
+                        '#00449E', // Deep Blue
+                        '#4A90E2', // Lighter Blue
+                        '#8CB8E8'  // Pale Blue
+                    ],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 2
+                }]
+            };
+
+            const distributionConfig = {
+                type: 'doughnut',
+                data: distributionData,
+                options: {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    cutout: '70%',
+                    plugins: {
+                        legend: {
+                            // FIX: Changed position from 'bottom' to 'right' to stop label wrapping/overlapping
+                            position: 'right', 
+                            labels: {
+                                color: '#333333',
+                                font: {
+                                    size: 14,
+                                    weight: '600'
+                                }
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: function(tooltipItems) {
+                                    const item = tooltipItems[0];
+                                    let label = item.chart.data.labels[item.dataIndex];
+                                    if (Array.isArray(label)) {
+                                      return label.join(' ');
+                                    } else {
+                                      return label;
+                                    }
+                                },
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const specialistDoughnutChartCtx = document.getElementById('specialistDoughnutChart').getContext('2d');
+            new Chart(specialistDoughnutChartCtx, distributionConfig);
+        });
+    </script>
+</body>
+</html>
+
